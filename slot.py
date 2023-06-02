@@ -1,6 +1,6 @@
 import random
 
-
+#Define parameters of slot machine: how many rows; how many lines; max monetary and minimum bet.
 MAX_LINES = 3
 MAX_BET = 100
 MIN_BET = 1
@@ -8,6 +8,7 @@ MIN_BET = 1
 ROWS = 3
 COLS = 3
 
+#Frequency of symbol appearing in slot machine
 symbol_count = {
     "A": 2,
     "B": 4,
@@ -15,13 +16,14 @@ symbol_count = {
     "D": 8,
 }
 
+
 symbol_value = {
     "A": 5,
     "B": 4,
     "C": 3,
     "D": 2,
 }
-
+#Check for matching symbols, add to winings if so
 def check_winnings(columns, lines, bet, values):
     winnings = 0
     winning_lines = []
@@ -37,7 +39,7 @@ def check_winnings(columns, lines, bet, values):
     
     return winnings, winning_lines
 
-
+#Randomize and set slot machine symbols
 def get_slot_machine_spin(rows, cols, symbols):
     all_symbols = []
     for symbol, symbol_count in symbols.items():
